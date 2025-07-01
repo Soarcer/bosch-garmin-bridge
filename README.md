@@ -4,7 +4,7 @@ A reverse-engineered solution for connecting Bosch e-bike systems to Garmin cycl
 
 ## Overview
 
-This project enables communication between Bosch e-bike motors and Garmin devices by reverse engineering the Bluetooth protocol used by the Bosch Flow app. Data is captured from paired Bosch motors and retransmitted to Garmin devices via Bluetooth peripheral emulation for standard cycling metrics or Connect IQ custom data fields for e-bike specific information.
+This project enables communication between Bosch e-bike motors and Garmin devices by reverse engineering the proprietary Bluetooth protocol used by the Bosch Flow app.
 
 ## The Challenge
 
@@ -94,6 +94,31 @@ We welcome contributions in the following areas:
 - **Testing data** - Capture traces from different Bosch motor models
 - **Code contributions** - Mobile app development for the bridge solution
 - **Documentation** - Improve protocol documentation and setup guides
+
+## Data Collection Methodology
+
+Next up is collecting proper test data. My methodology is:
+
+### Setup Sequence
+- Start the bike
+- Launch Bosch Flow app and begin an activity
+- As soon as the activity starts, switch to NRF Connect
+- Connect to the bike's primary service and subscribe to the data characteristic
+- Start logging data
+
+### Controlled Testing
+- Plan specific tests beforehand (works much better than random data collection)
+- **Example - Assist level testing:** Pedal at assist level 1 for 10 seconds, switch to level 2 for 10 seconds, continue cycling through all modes at known intervals
+- This makes correlation much easier during analysis
+
+### Data Analysis
+- Download the .FIT file from Bosch Flow app
+- Export raw Bluetooth logs from NRF Connect
+- Compare both datasets against current protocol understanding to identify patterns and validate findings
+- Every iteration of AI improvements makes this easier, Claude Sonnet 4 is my current favorite
+- **Important:** Do not be tempted or fooled by high confidence analysis! The AIs love to pretend to be right, smugly so. Run it through different chats or different AIs to get cross verification
+
+This controlled approach makes it much easier to correlate Bluetooth data patterns with known bike states and verify protocol accuracy.
 
 ## Acknowledgments
 - @robbydobs for eMTB mode name confirmation and validation
