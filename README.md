@@ -95,13 +95,5 @@ We welcome contributions in the following areas:
 - **Code contributions** - Mobile app development for the bridge solution
 - **Documentation** - Improve protocol documentation and setup guides
 
-## Roadmap
-
-1. **Phase 1:** Complete power protocol analysis and validation
-2. **Phase 2:** Decode battery level and cadence data patterns
-3. **Phase 3:** Develop mobile bridge application
-4. **Phase 4:** Create Garmin Connect IQ data field and companion app
-5. **Phase 5:** Investigate pairing key extraction for standalone solutions
-
 ## Acknowledgments
 - @robbydobs for eMTB mode name confirmation and validation
