@@ -4,7 +4,7 @@ A reverse-engineered solution for connecting Bosch e-bike systems to Garmin cycl
 
 ## Overview
 
-This project enables communication between Bosch e-bike motors and Garmin devices by reverse engineering the proprietary Bluetooth protocol used by the Bosch Flow app.
+This project enables communication between Bosch e-bike motors and Garmin devices by reverse engineering the Bluetooth protocol used by the Bosch Flow app. Data is captured from paired Bosch motors and retransmitted to Garmin devices via Bluetooth peripheral emulation for standard cycling metrics or Connect IQ custom data fields for e-bike specific information.
 
 ## The Challenge
 
